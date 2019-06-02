@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Calcolatrice</title>
+    <title>Calculator</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -14,87 +14,96 @@
 
 <body>
 
-    <div class="container">
-        <div class="container cont-calcolatrice">
+    <form>
 
-            <div class="cont-display">
+        <div class="container">
+            <div class="container cont-calculator">
 
-                <div class="display">
-                    0
-                </div>
+                <div class="cont-display">
 
-            </div>
-
-            <div class="cont-bottoni">
-                <div class="row no-gutters">
-
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">C</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">+/-</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">%</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice operatore">=</div>
+                    <div class="display">
+                        <input id="display" type="text" disabled>
                     </div>
 
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">7</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">8</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">9</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice operatore">X</div>
-                    </div>
-
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">4</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">5</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">6</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice operatore">&#247;</div>
-                    </div>
-
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">1</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">2</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">3</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice operatore">+</div>
-                    </div>
-
-                    <div class="col-6 d-flex">
-                        <div class="bottone-calcolatrice">0</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice">.</div>
-                    </div>
-                    <div class="col-3 d-flex">
-                        <div class="bottone-calcolatrice operatore">-</div>
+                    <div class="display-history">
+                        <p>history</p>
+                        <input type="text" id="display-history" disabled>
                     </div>
 
                 </div>
-            </div>
 
+                <div class="cont-buttons">
+                    <div class="row no-gutters">
+
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="canc(this)">C</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button">+/-</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="doPercentage(this)">%</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button operators" onclick="total()">=</div>
+                        </div>
+
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">7</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">8</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">9</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button operators" data-value="*" onclick="addDifferent(this)">X</div>
+                        </div>
+
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">4</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">5</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">6</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button operators" data-value="/" onclick="addDifferent(this)">&#247;</div>
+                        </div>
+
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">1</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">2</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">3</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button operators" onclick="add(this)">+</div>
+                        </div>
+
+                        <div class="col-6 d-flex">
+                            <div class="calc-button" onclick="add(this)">0</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button" onclick="add(this)">.</div>
+                        </div>
+                        <div class="col-3 d-flex">
+                            <div class="calc-button operators" onclick="add(this)">-</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
+
+    </form>
 
 
 

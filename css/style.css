@@ -1,4 +1,4 @@
-.cont-calcolatrice{
+.cont-calculator{
     width:474px;
     height: 843px;
     margin: 0 auto;
@@ -11,8 +11,8 @@
     padding: 0;
 }
 
-.cont-bottoni .col-3,
-.cont-bottoni .col-6{
+.cont-buttons .col-3,
+.cont-buttons .col-6{
     width: 100%;
     text-align: center;
     margin-bottom:1px;
@@ -22,28 +22,57 @@
     height: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     color: white;
+    font-size: 14px;
 }
 
 .cont-display .display{
     font-size: 70px;
     font-weight: lighter;
-    display: flex;
-    justify-content: flex-end;
     margin: 0 40px;
 }
 
-.cont-bottoni{
+.cont-display .display-history{
+    padding-bottom: 5px;
+    margin: 0 40px;
+    display: flex;
+}
+
+.cont-display .display-history p{
+    margin: 0;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+#display{
+    background: transparent;
+    width: 100%;
+    border: none;
+    color: white;
+    text-align: right;
+    font-weight: lighter;
+}
+
+#display-history{
+    background: transparent;
+    width: 100%;
+    border: none;
+    color: white;
+    text-align: right;
+    font-weight: lighter;
+}
+
+.cont-buttons{
     height: 70%;
 }
 
-.cont-bottoni .row{
+.cont-buttons .row{
     height: 100%;
 }
 
-.cont-bottoni .col-3 .bottone-calcolatrice,
-.cont-bottoni .col-6 .bottone-calcolatrice{
+.cont-buttons .col-3 .calc-button,
+.cont-buttons .col-6 .calc-button{
     color: white;
     font-weight: lighter;
     display: flex;
@@ -52,21 +81,21 @@
     width: 100%;
     height: 100%;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 38px;
     margin-right: 1px;
     background-color: rgba(255,255,255,0.1);
     transition: 0.5s ease;
 }
 
-.cont-bottoni .col-3 .bottone-calcolatrice.operatore{
+.cont-buttons .col-3 .calc-button.operators{
     background-color: rgba(255,255,255,0.3);
 }
 
-.cont-bottoni .bottone-calcolatrice:hover{
+.cont-buttons .calc-button:hover{
     background-color: rgba(255,255,255,0.6) !important;
 }
 
-.cont-bottoni .bottone-calcolatrice:active{
+.cont-buttons .calc-button:active{
     box-shadow: inset 1px 1px 13px #777;
     transform: translateY(2px);
 }
